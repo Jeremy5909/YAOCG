@@ -20,7 +20,7 @@ void ProcessInput() {
     std::string command;
     iss >> command; // Extract command from input stream
 
-    if (command == "inspect") {
+    if (command == "inspect" || command == "examine") {
         std::string targetName;
         iss >> targetName; // Extract target from input stream
 
@@ -34,7 +34,7 @@ void ProcessInput() {
                 std::cout << "There is no '" << targetName << "' in the room." << std::endl;
             }
         }
-    } else if (command == "look") {
+    } else if (command == "look" || command == "see" || command == "c") {
         std::vector<Object> roomObjects = Player::currentRoom->getObjects();
 
         std::cout << "You are in " << std::endl;

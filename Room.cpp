@@ -3,7 +3,6 @@
 //
 
 #include "Room.h"
-#include <iostream>
 
 void Room::AddObject(const Object& toAdd) {
     pObjects.push_back(toAdd);
