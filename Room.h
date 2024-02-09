@@ -17,8 +17,6 @@ public:
 public:
     void AddObject(const Object& toAdd);
     Object* FindObjectByName(const std::string& name);
-
-    void LookAround();
 };
 
 
