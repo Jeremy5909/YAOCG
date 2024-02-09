@@ -46,10 +46,6 @@ void ProcessInput() {
     ProcessInput();
 }
 
-void GameLoop() {
-    ProcessInput();
-}
-
 int main() {
     Room LivingRoom;
     LivingRoom.AddObject(*(new Object("chair")));
@@ -60,7 +56,7 @@ int main() {
               << "You notice a nametag on your shirt that says: ";
     std::cin >> Player::name;
 
-    GameLoop();
+    ProcessInput();
 
     return 0;
 }
