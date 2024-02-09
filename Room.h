@@ -9,10 +9,15 @@
 #include "Object.h"
 
 class Room {
+private:
+    std::vector<Object> pObjects;
 public:
-    std::vector<Object> objects;
+    const std::vector<Object> &getObjects() const;
+
+public:
     void AddObject(const Object& toAdd);
     Object* FindObjectByName(const std::string& name);
+
     void LookAround();
 };
 

@@ -35,7 +35,13 @@ void ProcessInput() {
             }
         }
     } else if (command == "look") {
-        Player::currentRoom->LookAround();
+        std::vector<Object> roomObjects = Player::currentRoom->getObjects();
+
+        std::cout << "You are in " << std::endl;
+        std::cout << "Objects in the room: " << std::endl;
+        for (const auto& obj : roomObjects) {
+            std::cout << "- " << obj.getName() << std::endl;
+        }
     } else if (command == "help") {
         std:: cout << "Your available commands are: look, help, inspect" << std::endl;
     }
