@@ -8,10 +8,13 @@
 
 #include "Object.h"
 
-class Toggleable : Object{
+class Toggleable : public Object{
+private:
     bool toggled;
 public:
+    explicit Toggleable(const std::string &name);
     void Toggle();
+    void Use() override;
 
 };
 

@@ -10,10 +10,11 @@
 class Object {
     std::string name;
 public:
-    const std::string &getName() const;
+    [[nodiscard]] const std::string &getName() const;
 
 public:
     explicit Object(std::string name);
+    virtual void Use();
 };
 
 
