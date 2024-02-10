@@ -20,3 +20,9 @@ Object* Room::FindObjectByName(const std::string& name) {
 const std::vector<Object> &Room::getObjects() const {
     return pObjects;
 }
+
+const std::string &Room::getName() const {
+    return pName;
+}
+
+Room::Room(const std::string &pName) : pName(pName) {}

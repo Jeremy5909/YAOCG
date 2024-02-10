@@ -11,8 +11,11 @@
 class Room {
 private:
     std::vector<Object> pObjects;
+    std::string pName;
 public:
-    const std::vector<Object> &getObjects() const;
+    explicit Room(const std::string &pName);
+    [[nodiscard]] const std::string &getName() const;
+    [[nodiscard]] const std::vector<Object> &getObjects() const;
 
 public:
     void AddObject(const Object& toAdd);
