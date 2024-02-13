@@ -81,8 +81,12 @@ void ProcessInput() {
                     }
                 } else {
                     Item* targetItem = targetChest->FindItemByName(targetItemName);
-                    targetChest->Remove(targetItem);
-                    Player::inventory.push_back(targetItem);
+                    if(targetItem != nullptr) {
+                        targetChest->Remove(targetItem);
+                        Player::inventory.push_back(targetItem);
+                    } else {
+                        std::cout << "There is no " << targetItemName << " in " << targetObjectName << std::endl;
+                    }
                 }
             } else {
                 std::cout << "That does not have an inventory." << std::endl;
@@ -107,7 +111,7 @@ int main() {
 
 
     std::cout << "You wake up. You don't know who or where you are but you have a sudden craving for brains." << std::endl
-              << "You notice a pName tag on your shirt that says: ";
+              << "You notice a tag on your shirt that says: ";
     std::cin >> Player::name;
 
     // Ignore input     length max stream size                         up to \n
@@ -115,8 +119,6 @@ int main() {
 
     auto* StarterChest = new Chest("StarterChest");
     StarterChest->AddTo(new Item("Sword"));
-    StarterChest->AddTo(new Item("Map"));
-    StarterChest->AddTo(new Item("Brain"));
 
     Player::currentRoom->AddObject( StarterChest);
 
