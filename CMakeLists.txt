@@ -9,4 +9,8 @@ add_executable(Zombielife3 main.cpp
         Toggleable.cpp
         Toggleable.h
         Room.cpp
-        Room.h)
+        Room.h
+        Chest.cpp
+        Chest.h
+        Item.cpp
+        Item.h)

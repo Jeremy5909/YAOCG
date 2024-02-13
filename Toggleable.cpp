@@ -19,3 +19,8 @@ void Toggleable::Use() {
     toggled ? std::cout << "on" : std::cout << "off";
     std::cout << std::endl;  // Add a newline to separate the output
 }
+
+void Toggleable::Inspect() {
+    Object::Inspect();
+    std::cout << "Status: " << (toggled ? "on" : "off") << std::endl;
+};

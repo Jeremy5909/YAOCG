@@ -15,6 +15,7 @@ public:
     explicit Toggleable(const std::string &name);
     void Toggle();
     void Use() override;
+    void Inspect() override;
 
 };
 

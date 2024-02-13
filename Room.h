@@ -10,16 +10,17 @@
 
 class Room {
 private:
-    std::vector<Object> pObjects;
+    std::vector<Object*> pObjects;
     std::string pName;
 public:
-    explicit Room(const std::string &pName);
+    explicit Room(std::string pName);
     [[nodiscard]] const std::string &getName() const;
-    [[nodiscard]] const std::vector<Object> &getObjects() const;
+    [[nodiscard]] const std::vector<Object*> &getObjects() const;
 
 public:
-    void AddObject(const Object& toAdd);
+    void AddObject(Object* toAdd);
     Object* FindObjectByName(const std::string& name);
+    Object* operator [](const std::string& name);
 };
 
 

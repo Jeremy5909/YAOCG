@@ -8,13 +8,12 @@
 #include <string>
 
 class Object {
-    std::string name;
+    std::string pName;
 public:
     [[nodiscard]] const std::string &getName() const;
-
-public:
     explicit Object(std::string name);
     virtual void Use();
+    virtual void Inspect();
 };
 
 
